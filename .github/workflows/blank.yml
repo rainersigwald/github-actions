@@ -29,9 +29,13 @@ jobs:
 
     - name: Restore
       run: dotnet restore
+      env:
+        DOTNET_CLI_TELEMETRY_OPTOUT: 1
 
     - name: Build
       run: dotnet build --configuration Release --no-restore -bl:${{ matrix.os }}.binlog
+      env:
+        DOTNET_CLI_TELEMETRY_OPTOUT: 1
 
     - name: Publish artifact
       uses: actions/upload-artifact@master
