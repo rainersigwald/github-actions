@@ -47,4 +47,4 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: ${{ matrix.os }}-log
-        path: *.binlog
+        path: '**/*.binlog'
